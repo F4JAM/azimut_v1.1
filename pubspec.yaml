@@ -1,0 +1,47 @@
+name: azimut
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  path: ^1.9.0
+  latlong2: ^0.9.1
+  intl: any
+  geolocator: ^14.0.2
+  flutter_map: ^8.2.2
+  flutter_map_location_marker: ^10.1.0
+  provider: any
+  geoengine: any
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  path_provider: ^2.1.2
+  share_plus: ^10.0.2
+  web: ^1.0.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.14.4
+
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.6
+
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icon/app_icon.png
+
+flutter_icons:
+  android: true
+  ios: false
+  image_path: "assets/icon/app_icon.png"
