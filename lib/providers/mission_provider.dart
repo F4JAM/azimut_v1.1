@@ -11,11 +11,17 @@ import '../app/waypoint_Dto.dart';
 import 'location_provider.dart';
 import '../services/mission_storage_service.dart'; //Hive
 
+enum MapSource {ign, osm}
+
 class MissionProvider extends ChangeNotifier {
   final AppRole role;
   final Mission mission;
 
   late LocationProvider _location;
+
+
+
+
 
   // constructeur privé, ne peut être utilisé que dans la class
   MissionProvider._(this.role, this.mission);
@@ -289,5 +295,17 @@ class MissionProvider extends ChangeNotifier {
    * bool hasWaypointForEquipe(String equipeId)
    * Waypoint? getWaypointForEquipe(String equipeId)
    */
+
+  /* Changement du fond de carte : IGN ou OpenStreetMap */
+  MapSource _mapSource = MapSource.ign;
+  MapSource get mapSource => _mapSource;
+
+  void setMapSource(MapSource source) {
+    if (_mapSource != source) {
+      _mapSource = source;
+      notifyListeners();
+    }
+  }
+
 
 } // class MissionProvider

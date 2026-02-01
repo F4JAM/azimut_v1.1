@@ -13,6 +13,8 @@ class MissionManagementScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    final missionProvider = context.watch<MissionProvider>();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Gestion de la mission'),
@@ -22,6 +24,31 @@ class MissionManagementScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+
+
+            RadioListTile<MapSource>(
+              title: const Text('IGN'),
+              value: MapSource.ign,
+              groupValue: missionProvider.mapSource,
+              onChanged: (value) {
+                if (value != null) {
+                  missionProvider.setMapSource(value);
+                }
+              },
+            ),
+
+            RadioListTile<MapSource>(
+              title: const Text('OpenStreetMap'),
+              value: MapSource.osm,
+              groupValue: missionProvider.mapSource,
+              onChanged: (value) {
+                if (value != null) {
+                  missionProvider.setMapSource(value);
+                }
+              },
+            ),
+
+            const SizedBox(height: 24),
 
             ElevatedButton.icon(
               icon: const Icon(Icons.upload_file),

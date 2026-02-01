@@ -247,6 +247,23 @@ class MissionMapState extends State<MissionMap> {
           ),
           children: [
             TileLayer(
+              urlTemplate: mission.mapSource == MapSource.ign
+               ? 'https://data.geopf.fr/wmts'
+                  '?service=WMTS'
+                  '&request=GetTile'
+                  '&version=1.0.0'
+                  '&layer=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2'
+                  '&style=normal'
+                  '&tilematrixset=PM'
+                  '&tilematrix={z}'
+                  '&tilerow={y}'
+                  '&tilecol={x}'
+                  '&format=image/png'
+              :'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+            ),
+
+            /* pour tester la bascule OSM/IGN
+            TileLayer(
               //urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
               urlTemplate:
               'https://data.geopf.fr/wmts'
@@ -261,7 +278,7 @@ class MissionMapState extends State<MissionMap> {
                   '&tilecol={x}'
                   '&format=image/png',
               userAgentPackageName: 'fr.olooboo.app',
-            ),
+            ),*/
 
             // la position courante est gérée par flutter_map_location_marker
             CurrentLocationLayer(),
