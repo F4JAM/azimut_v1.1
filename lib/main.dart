@@ -46,6 +46,7 @@ class BootstrapApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Initialisation de la mission',
       home : StartupScreen(restoredMission: restoredMission,),
 
@@ -185,20 +186,23 @@ class _RoleSelectionScreenState extends State<RoleSelectionScreen> {
           children: [
             ElevatedButton(
               onPressed: () => _startPc(context),
-              child: const Text('En tant que PC'),
+              child: const Text('En tant que Poste de Contrôle'),
             ),
-            const SizedBox(height: 24),
-            TextField(
-              controller: _idController,
-              decoration: const InputDecoration(
-                labelText: 'ID équipe (optionnel)',
-                hintText: 'ex : Diogène1',
-              ),
-            ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 60),
+
             ElevatedButton(
               onPressed: () => _startMobile(context),
               child: const Text('En tant qu’équipe mobile'),
+            ),
+
+            const SizedBox(height: 8),
+
+            TextField(
+              controller: _idController,
+              decoration: const InputDecoration(
+                labelText: 'ID de l\'équipe (optionnel)',
+                hintText: 'ex : Diogène1',
+              ),
             ),
           ],
         ),
@@ -258,6 +262,7 @@ class MissionApp extends StatelessWidget {
 */
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Recherche',
         home: const MissionHomeScreen(),
       ),

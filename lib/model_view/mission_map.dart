@@ -29,6 +29,7 @@ class MissionMapState extends State<MissionMap> {
   @override
   // Ecoute des providers par le build : le GPS et la mission
   Widget build(BuildContext context) {
+
     final location        = context.watch<LocationProvider>();
     final  mission        = context.watch<MissionProvider>();
     final missionProvider = context.watch<MissionProvider>();
@@ -415,7 +416,7 @@ class MissionMapState extends State<MissionMap> {
               );
             },
             tooltip: 'Gestion de la mission',
-            child: Icon(Icons.event_note, color: Colors.green),
+            child: Text("M"),
           ),
         ),
         /***************************************** */
