@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/mission_provider.dart';
-import '../services/mission_file_export_service.dart';
-import 'package:share_plus/share_plus.dart';
-
 import '../services/mission_exporter_factory.dart';
 
 
@@ -25,6 +22,7 @@ class MissionManagementScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
 
+            const Text('Choix du fond de carte'),
 
             RadioListTile<MapSource>(
               title: const Text('IGN'),
@@ -48,8 +46,9 @@ class MissionManagementScreen extends StatelessWidget {
               },
             ),
 
-            const SizedBox(height: 24),
+            const SizedBox(height: 60),
 
+            const Text('Exporter la mission au format .json'),
             ElevatedButton.icon(
               icon: const Icon(Icons.upload_file),
               label: const Text('Exporter la mission'),
