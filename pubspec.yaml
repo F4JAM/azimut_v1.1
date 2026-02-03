@@ -23,6 +23,7 @@ dependencies:
   path_provider: ^2.1.2
   share_plus: ^10.0.2
   web: ^1.0.0
+  flutter_native_splash: ^2.4.7
 
 
 dev_dependencies:
@@ -45,3 +46,13 @@ flutter_icons:
   android: true
   ios: false
   image_path: "assets/icon/app_icon.png"
+
+flutter_native_splash:
+  color: "#002A4D"   # fond
+  image: assets/splash.png
+  android: true
+  ios: true
+
+  android_12:
+    color: "#002A4D"
+    image: assets/splash.png
