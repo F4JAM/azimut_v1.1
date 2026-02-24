@@ -243,6 +243,9 @@ class MissionMapState extends State<MissionMap> {
         FlutterMap(
           mapController: _mapController,
           options: MapOptions(
+            interactionOptions: InteractionOptions(
+              flags: InteractiveFlag.all & ~InteractiveFlag.rotate,
+            ),
             initialCenter: current ?? const LatLng(78.2, 15.5),
             initialZoom: 10,
           ),
@@ -261,6 +264,7 @@ class MissionMapState extends State<MissionMap> {
                   '&tilecol={x}'
                   '&format=image/png'
               :'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+              userAgentPackageName: 'fr.olooboo.app',
             ),
 
             /* pour tester la bascule OSM/IGN
