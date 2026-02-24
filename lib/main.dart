@@ -1,3 +1,8 @@
+/* App Azimut : aide à la recherche de balise radio
+ * F4JAM - 2026
+ * Licence MIT
+ */
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'providers/location_provider.dart';
